@@ -1,4 +1,4 @@
-h1 = document.querySelectorAll("h1")
-for (elm of h1){
-    h1.innerHTML += "char"
+let h1 = document.querySelectorAll("h1")
+for (let elm of h1) {
+    elm.innerHTML += "char"
 }
