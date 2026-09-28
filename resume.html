@@ -7,34 +7,148 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resume | Blaise Baptist</title>
+    <style>
+  
+
+  .resume {
+    font-family: "Noto Sans", "Liberation Sans", sans-serif;
+    font-size: 9.7pt;
+    line-height: 1.25;
+    color: #111;
+    margin: 0;
+  }
+  .resume a { color: inherit; text-decoration: none; }
+
+  .resume-head { text-align: center; margin-bottom: 6pt; }
+  .resume-head .name { font-size: 20pt; letter-spacing: 0.5pt; margin: 0 0 2pt; font-weight: 700; }
+  .resume-head .contact { font-size: 9.5pt; }
+  .resume-head .objective { margin-top: 4pt; font-style: italic; }
+  .resume-head .contact span + span::before { content: "  |  "; white-space: pre; color: #777; }
+
+  .resume h2 {
+    font-size: 10.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.8pt;
+    border-bottom: 1px solid #333;
+    margin: 7pt 0 3pt;
+    padding-bottom: 1pt;
+  }
+
+  .resume .entry { margin-bottom: 4pt; }
+  .resume .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .resume .title { font-weight: 700; }
+  .resume .sub { font-style: italic; }
+  .resume .date { white-space: nowrap; padding-left: 8pt; }
+  .resume .tech { font-style: italic; font-weight: 400; color: #333; }
+
+  .resume ul { margin: 1.5pt 0 0; padding-left: 13pt; }
+  .resume li { margin-bottom: 1.2pt; }
+
+  .resume .skills div { margin-bottom: 1.5pt; }
+  .resume .skills b { display: inline-block; min-width: 72pt; }
+  .resume .small { font-size: 9.5pt; }
+
+  .resume { max-width: 8in; margin: 16pt auto; }
+  .resume .name { font-size: 20pt; font-weight: 700; letter-spacing: 0.5pt; margin-bottom: 2pt; }
+  .resume h2 { font-style: normal; }
+  .resume-download { text-align: center; margin: 12pt 0; }
+  .resume .resume-download a { color: #0645ad; text-decoration: underline; }
+  @media (max-width: 600px) {
+    .resume .row { flex-direction: column; }
+    .resume .date { padding-left: 0; }
+    .resume .skills b { display: block; }
+  }
+    </style>
 </head>
 
 <body>
     {% include header.html %}
-    <main>A resume</main>
-    <h1>Known Technologies</h1>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>javascript</li>
-        <li>c++</li>
-        <li>c</li>
-        <li>python</li>
-        <li>ROS2</li>
-        <li>linux</li>
-        <li>java</li>
-        <li>Robotics</li>
-    </ul>
-    <h1>Work Experience</h1>
-    <h2>Lifeguard</h2>
-    <h3>was a lifeguard over the summer 3 summers ago</h3>
-    <h2>ARC internship</h2>
-    <h3>coding internship 2 summers ago</h3>
-    <h1>Education Experience</h1>
-    <h2>High School</h2>
-    <h3>The Grayson School</h3>
-    <h2>Collage -- Undergrad</h2>
-    <h3>Rose-Hulman</h3>
+    <main class="resume">
+
+
+<div class="resume-head">
+  <div class="name">Blaise Baptist</div>
+  <div class="contact">
+    <span>Devon, PA</span><span><a href="mailto:baptisbc@rose-hulman.edu">baptisbc@rose-hulman.edu</a></span><span><a href="https://linkedin.com/in/blaise-baptist">linkedin.com/in/blaise-baptist</a></span><span><a href="https://github.com/BlaiseBaptist">github.com/BlaiseBaptist</a></span>
+  </div>
+  <div class="objective">Computer Science student seeking a software internship for Summer 2027</div>
+</div>
+
+<h2>Education</h2>
+<div class="entry">
+  <div class="row"><span class="title">Rose-Hulman Institute of Technology</span><span class="date">Terre Haute, IN</span></div>
+  <div class="row"><span class="sub">Bachelor of Science in Computer Science</span><span class="date">Expected May 2029</span></div>
+  <div class="small">Coursework: Operating Systems, Computer Architecture, Data Structures &amp; Algorithm Analysis, Systems Programming, Object-Oriented Software Development, Digital Systems; <i>in progress:</i> Web Programming, Debugging</div>
+</div>
+
+<h2>Experience</h2>
+<div class="entry">
+  <div class="row"><span class="title">Thornbots, Rose-Hulman RoboMaster Team</span><span class="date">Sept 2025 – Present</span></div>
+  <div class="row"><span class="sub">Secretary; Software Developer, Sentry Robot</span><span class="date">Terre Haute, IN</span></div>
+  <ul>
+    <li>Built the ROS 2 localization stack for the autonomous Sentry robot, with SLAM, AMCL, and EKF backends that fuse wheel odometry with rf2o laser odometry</li>
+    <li>Wrote the targeting stage of the CV pipeline, which tracks enemy robots from detected armor panels and decides where to aim and when to fire; co-wrote the depth step that turns 2-D detections into 3-D panels</li>
+    <li>Wrote Gazebo test benches that measure localization drift against ground truth and score aiming and tracking</li>
+    <li>Ported the full robot stack from ROS 2 Humble to Jazzy and Isaac ROS 4.6</li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="row"><span class="title">Association Resource Center</span><span class="date">July – August 2025</span></div>
+  <div class="row"><span class="sub">Coding Intern</span><span class="date">Milwaukee, WI</span></div>
+  <ul>
+    <li>Wrote a Rust tool that tags articles automatically, replacing a manual step for staff</li>
+    <li>Worked with a team to build a front-end website in Rust, HTML, and CSS</li>
+  </ul>
+</div>
+
+<h2>Projects</h2>
+<div class="entry">
+  <div class="row"><span><span class="title">MediaManager</span> <span class="tech">| Python, Django, Rust, ffmpeg</span></span><span class="date">2026</span></div>
+  <ul>
+    <li>Built a client-server system that splits AV1 encoding across 5 machines, saving 1.5 TB on a 6 TB media library</li>
+    <li>The Django server locks each job to one worker, requeues jobs from workers that stall, and skips files already in AV1</li>
+    <li>The Rust client runs parallel jobs on the machine's hardware AV1 encoder, or on SVT-AV1 if it has none</li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="row"><span><span class="title">Mobile Home Lab</span> <span class="tech">| Ubuntu, Docker, Tailscale, iptables</span></span><span class="date">Aug 2025 – Present</span></div>
+  <ul>
+    <li>Set up a Protectli Vault as a portable router that shares an Ethernet or LTE uplink over its own Wi-Fi and works as a Tailscale exit node</li>
+    <li>Rewired it to run 21 hours over USB-C on custom Li-ion cells; it also hosts Pi-hole and Vaultwarden</li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="row"><span><span class="title">Newton Fractals</span> <span class="tech">| Rust</span></span><span class="date">2024 – 2025</span></div>
+  <ul>
+    <li>Wrote a multithreaded renderer for Newton's-method fractals that has produced 10-gigapixel images and includes an interactive viewer</li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="row"><span><span class="title">RS-232 Serial Port Reader</span> <span class="tech">| Rust, Iced</span></span><span class="date">Sept 2024 – May 2025</span></div>
+  <ul>
+    <li>Built a desktop app that splits one serial port's Arduino sensor stream into live graphs and saves it as CSV</li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="row"><span><span class="title">VEX Robotics</span> <span class="tech">| Python, Fusion 360</span></span><span class="date">Aug 2020 – May 2025</span></div>
+  <ul>
+    <li>Designed robots in Fusion 360 and wrote a PID controller for autonomous driving; the team qualified for State three times and Worlds once</li>
+  </ul>
+</div>
+
+<h2>Skills</h2>
+<div class="skills">
+  <div><b>Languages</b> Rust, C++, C, Python, Java, HTML/CSS/JavaScript</div>
+  <div><b>Robotics</b> ROS 2 (Humble, Jazzy), Isaac ROS, NVIDIA Jetson, Gazebo, SLAM/AMCL/EKF, YOLOv8, RealSense</div>
+  <div><b>Tools</b> Linux administration, Docker, Git/GitHub, Django, ffmpeg, Vim, Fusion 360</div>
+</div>
+
+<h2>Activities</h2>
+<div class="small"><b>Lifeguard</b>, Nassau Swim Club, 2024 (CPR/AED certified) &nbsp;|&nbsp; <b>Theatre Tech</b>, The Grayson School, 2024–2025 (sound board)</div>
+
+
+    <p class="resume-download"><a href="/assets/Blaise_Baptist_Resume.pdf">Download PDF</a></p>
+    </main>
     {% include footer.html %}
 </body>
 
