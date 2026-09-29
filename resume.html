@@ -42,7 +42,7 @@
   .resume .tech { font-style: italic; font-weight: 400; color: #333; }
 
   .resume ul { margin: 1.5pt 0 0; padding-left: 13pt; }
-  .resume li { margin-bottom: 1.2pt; }
+  .resume li { margin-bottom: 0.8pt; }
 
   .resume .skills div { margin-bottom: 1.5pt; }
   .resume .skills b { display: inline-block; min-width: 72pt; }
@@ -71,13 +71,13 @@
   <div class="contact">
     <span>Devon, PA</span><span><a href="mailto:baptisbc@rose-hulman.edu">baptisbc@rose-hulman.edu</a></span><span><a href="https://linkedin.com/in/blaise-baptist">linkedin.com/in/blaise-baptist</a></span><span><a href="https://github.com/BlaiseBaptist">github.com/BlaiseBaptist</a></span>
   </div>
-  <div class="objective">Computer Science student seeking a software internship for Summer 2027</div>
+  <div class="objective">CS student writing ROS 2 software for autonomous robots, seeking a Summer 2027 software internship</div>
 </div>
 
 <h2>Education</h2>
 <div class="entry">
   <div class="row"><span class="title">Rose-Hulman Institute of Technology</span><span class="date">Terre Haute, IN</span></div>
-  <div class="row"><span class="sub">Bachelor of Science in Computer Science</span><span class="date">Expected May 2029</span></div>
+  <div class="row"><span class="sub">Bachelor of Science in Computer Science; GPA 2.34</span><span class="date">Expected May 2029</span></div>
   <div class="small">Coursework: Operating Systems, Computer Architecture, Data Structures &amp; Algorithm Analysis, Systems Programming, Object-Oriented Software Development, Digital Systems; <i>in progress:</i> Web Programming, Debugging</div>
 </div>
 
@@ -96,43 +96,52 @@
   <div class="row"><span class="title">Association Resource Center</span><span class="date">July – August 2025</span></div>
   <div class="row"><span class="sub">Coding Intern</span><span class="date">Remote</span></div>
   <ul>
-    <li>Wrote a Rust tool that tags articles automatically, replacing a manual step for staff</li>
-    <li>Worked with a team to build a front-end website in Rust, HTML, and CSS</li>
+    <li>Built internal Rust tools for staff who manage many professional associations</li>
+    <li>Wrote a scraper that pulls the tags out of client associations' articles, replacing a manual step for staff</li>
+    <li>Worked with a team on the shared back end used across clients and on a front-end site in Rust, HTML, and CSS</li>
   </ul>
 </div>
 
 <h2>Projects</h2>
 <div class="entry">
-  <div class="row"><span><span class="title">MediaManager</span> <span class="tech">| Python, Django, Rust, ffmpeg</span></span><span class="date">2026</span></div>
+  <div class="row"><span><span class="title">MediaManager</span> <span class="tech">| Python, Django, Rust, ffmpeg</span></span><span class="date">Apr – May 2026</span></div>
   <ul>
     <li>Built a client-server system that splits AV1 encoding across 5 machines, saving 1.5 TB on a 6 TB media library</li>
-    <li>The Django server locks each job to one worker, requeues jobs from workers that stall, and skips files already in AV1</li>
+    <li>The Django server syncs with Radarr and Sonarr and uses ffprobe to queue only files that need re-encoding</li>
+    <li>It locks each job to one worker and requeues jobs from workers that stall</li>
     <li>The Rust client runs parallel jobs on the machine's hardware AV1 encoder, or on SVT-AV1 if it has none</li>
   </ul>
 </div>
 <div class="entry">
-  <div class="row"><span><span class="title">Mobile Home Lab</span> <span class="tech">| Ubuntu, Docker, Tailscale, iptables</span></span><span class="date">Aug 2025 – Present</span></div>
+  <div class="row"><span><span class="title">Mobile Home Lab</span> <span class="tech">| Ubuntu, Docker, Tailscale, iptables</span></span><span class="date">Aug 2025 – Aug 2026</span></div>
   <ul>
-    <li>Set up a Protectli Vault as a portable router that shares an Ethernet or LTE uplink over its own Wi-Fi and works as a Tailscale exit node</li>
-    <li>Rewired it to run 21 hours over USB-C on custom Li-ion cells; it also hosts Pi-hole and Vaultwarden</li>
+    <li>Set up a Protectli Vault as a portable router that shares an Ethernet or LTE uplink over its own Wi-Fi network</li>
+    <li>Runs Pi-hole as DNS for the whole tailnet, with a second Pi-hole for failover, and works as a Tailscale exit node</li>
+    <li>Bridged two Ethernet ports and the Wi-Fi into a single LAN so the router also works as a network switch</li>
+    <li>Hosts Vaultwarden, Calibre-Web, and Netdata in Docker, plus Samba file shares and an rclone remote mount</li>
+    <li>Rewired it to run for 21 hours over USB-C on a battery pack built from custom Li-ion cells</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span><span class="title">Newton Fractals</span> <span class="tech">| Rust</span></span><span class="date">2024 – 2025</span></div>
   <ul>
-    <li>Wrote a multithreaded renderer for Newton's-method fractals that has produced 10-gigapixel images and includes an interactive viewer</li>
+    <li>Wrote a multithreaded renderer for Newton's-method fractals that splits work across all CPU cores with Rayon</li>
+    <li>Has produced 10-gigapixel images and includes an interactive Iced viewer for zooming and panning</li>
+    <li>Takes roots from a file or generates them at random, and computes the polynomial and its derivative itself</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span><span class="title">RS-232 Serial Port Reader</span> <span class="tech">| Rust, Iced</span></span><span class="date">Sept 2024 – May 2025</span></div>
   <ul>
-    <li>Built a desktop app that splits one serial port's Arduino sensor stream into live graphs and saves it as CSV</li>
+    <li>Built a desktop app with an Iced GUI that reads Arduino sensor data over a serial port</li>
+    <li>Splits one port's stream into several live graphs and saves recordings as raw bytes or CSV</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span><span class="title">VEX Robotics</span> <span class="tech">| Python, Fusion 360</span></span><span class="date">Aug 2021 – May 2025</span></div>
   <ul>
-    <li>Designed robots in Fusion 360 and wrote a PID controller for autonomous driving; the team qualified for State three times and Worlds once</li>
+    <li>Designed competition robots in Fusion 360 and wrote a PID controller in Python for autonomous driving</li>
+    <li>The team qualified for the state championship three times and the VEX Robotics World Championship once</li>
   </ul>
 </div>
 
@@ -144,7 +153,7 @@
 </div>
 
 <h2>Activities</h2>
-<div class="small"><b>Lifeguard</b>, Nassau Swim Club, 2024 (CPR/AED certified) &nbsp;|&nbsp; <b>Theatre Tech</b>, The Grayson School, 2024–2025 (sound board)</div>
+<div class="small"><b>Lifeguard</b>, Nassau Swim Club, 2024 (CPR/AED certified) &nbsp;|&nbsp; <b>Theatre Tech</b>, The Grayson School, 2022–2025 (sound board)</div>
 
 
     <p class="resume-download"><a href="/assets/Blaise_Baptist_Resume.pdf">Download PDF</a></p>
